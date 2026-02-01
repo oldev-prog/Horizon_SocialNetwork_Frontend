@@ -1,0 +1,166 @@
+.signup_container {
+    width: 450px;
+    height: 730px;
+    background-color: rgba(21, 21, 21, 0.75);
+    backdrop-filter: blur(2px);
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup_h1 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup_h2 {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    color: #b5b5b5;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.name_for_signup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_field {
+    width: 220px;
+    background-color: rgba(21, 21, 21, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.first_name {
+    margin-right: 12px;
+    width: 240px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.date_birth {
+    display: flex;
+    flex-direction: column;
+}
+
+.date_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 70px;
+    margin-top: auto;
+}
+
+.date_h2 {
+    height: 20px;
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.date {
+    width: 220px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(21, 21, 21, 0.8);
+    font-size: 15px;
+    color: white;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender_h2 {
+    height: 35px;
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gender_container {
+    display: flex;
+    flex-direction: row;
+    /*background-color: white;*/
+    gap: 12px;
+}
+
+.gender_text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkbox {
+    width: 13px;
+    height: 13px;
+}
+
+.button_with_checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(21, 21, 21, 0.8);
+    gap: 16px;
+    padding: 8px 8px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button1 {
+    width: 96px;
+}
+
+.button2 {
+    width: 175px;
+}
+
+.input_field {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 20px;
+}
+
+.email_pas_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login_pas {
+    margin: 5px;
+    width: 420px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 20px;
+}
+
+.login_pas.pas {
+    margin-bottom: 13px;
+}
+
+select.date,
+select.input_field {
+    height: 40px;
+    padding-left: 10px;
+
+    -webkit-appearance: none;
+}

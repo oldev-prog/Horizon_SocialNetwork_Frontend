@@ -1,0 +1,291 @@
+/*.header {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    height: 10%;*/
+/*    width: 100%;*/
+/*    !*grid-row: 1 / 2;*!*/
+/*    !*grid-column: 2 / 3;*!*/
+/*    position: sticky;*/
+/*}*/
+
+.profile_container {
+    flex: 1;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 75px;
+    /*margin-right: 23px;*/
+    /*grid-row:  1/ 2;*/
+    /*grid-column: 2 / 3;*/
+}
+
+.profile {
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.profile_background {
+    /*background-color: #919191;*/
+    background-image: url('../public/anime.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 65%;
+    width: 100%;
+    position: relative;
+    /*border-top-left-radius: 20px;*/
+    /*border-top-right-radius: 20px;*/
+}
+
+.profile_info {
+    display: flex;
+    position: relative;
+    height: 35%;
+    width: 100%;
+    background-color: rgba(0, 0, 0);
+}
+
+.profile_nav {
+    display: flex;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    height: 45px;
+    width: 100%;
+    margin-top: auto;
+    border-bottom: #3c3c3c 1px solid;
+    border-top: #3c3c3c 1px solid;
+}
+
+.profile_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    /*margin-top: auto;*/
+    width: 100%;
+    background-color: rgba(0, 0, 0);
+}
+
+.profile_image {
+    position: absolute;
+    top: 240px;
+    left: 12%;
+    transform: translateX(-50%);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: #000000 4px solid;
+    background-image: url('../public/myphoto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+}
+
+.profile_image img {
+    border-radius: 50px;
+}
+
+.profile_name {
+    position: absolute;
+    color: white;
+    padding-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    top: 95px;
+    width: 500px
+}
+
+.friends_board {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 1px;
+    /*left: 893px;*/
+    padding-left: 820px;
+    width: 300px;
+    height: 145px;
+    /*background-color: #2e2e2e;*/
+}
+
+.friends_container {
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    margin-top: 5px;
+    /*background-color: #c6c8cc;*/
+    align-items: center;
+    justify-content: center;
+    /*background-color: white;*/
+}
+
+.h1_friends {
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.friends_value {
+    color: #a9aaae;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.friends_row {
+    display: flex;
+    flex-direction: row;
+    height: 84%;
+    /*background-color: #8c1e1e;*/
+}
+
+.first {
+    /*background-color: white;*/
+    height: 84%;
+    justify-content: center;
+}
+
+.second {
+    /*background-color: #4fb9dd;*/
+    height: 42%;
+    justify-content: center;
+    padding-top: 0;
+}
+
+.second_img {
+}
+
+.friends_img {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 14px;
+}
+
+.friend_container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    /*background-color: #0f3460;*/
+}
+
+.friend_container:hover {
+    background-color: #2c2c2c;
+}
+
+.friends_name {
+    color: #f2f2f2;
+    margin-top: 5px;
+    height: 45%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.location_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    /*top: 166px;*/
+    /*padding: 240px;*/
+    top: 15px;
+    padding-left: 280px;
+    /*z-index: 20;*/
+    pointer-events: auto;
+}
+
+.location {
+    height: 20px;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.location:hover {
+    text-decoration: underline;
+}
+
+.profile_age {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 36px;
+    padding-left: 273px;
+    pointer-events: auto;
+}
+
+.age {
+    height: 20px;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.age_value {
+    margin-left: 4px;
+    height: 20px;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile_bio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 555px;
+    left: 40px;
+    pointer-events: auto;
+}
+
+.bio {
+    height: 20px;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.bio:hover {
+    text-decoration: underline;
+}
+
+.profile_mood {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 75px;
+    padding-left: 243px;
+    pointer-events: auto;
+}
+
+.mood {
+    height: 20px;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 5px;
+}
+
+.mood_value {
+    height: 20px;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile_content {
+    display: flex;
+    flex-direction: column;
+}

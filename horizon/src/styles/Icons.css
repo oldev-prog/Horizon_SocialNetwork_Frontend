@@ -1,0 +1,31 @@
+.icon_menu {
+    height: 30px;
+}
+
+.icon_svg {
+    height: 30px;
+}
+
+
+.icon_png {
+    height: 30px;
+}
+
+.icon_header {
+    position: absolute;
+    height: 18px;
+}
+
+.icon_logout {
+    top: 10px
+}
+
+.icon_location {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.icon_info {
+    height: 18px;
+    margin-right: 5px;
+}

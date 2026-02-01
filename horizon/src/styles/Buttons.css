@@ -1,0 +1,332 @@
+.button_glass {
+    position: absolute;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(0px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -2px 8px rgba(0, 0, 0, 0.1),
+            inset 0 0 20px rgba(94, 129, 255, 0.1);
+    transition:
+            left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+    /*z-index: 30;*/
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button_glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.05) 100%
+    );
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.button_glass:hover {
+    box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.35),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45),
+            inset 0 0 30px rgba(94, 129, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.button_glass:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            inset 0 0 20px rgba(94, 129, 255, 0.2);
+    transition: all 0.1s ease;
+}
+
+
+.logout {
+    top: 10px;
+    right: 13px;
+    height: 30px;
+    color: #f2f2f2;
+}
+
+.edit_photo {
+    top: 345px;
+    right: 11px;
+    height: 30px;
+    width: 130px;
+    color: #f2f2f2;
+    font-size: 13px;
+}
+
+.profile_nav_button {
+    top: auto;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 20;
+    text-decoration: none;
+}
+
+.profile_nav_button:hover {
+    opacity: 0.75;
+    transition: background-color 1s,
+    color 1s;
+}
+
+.profile_nav_button:active {
+    transform: scale(0.93);
+    color: #fff;
+}
+
+.glass_slider {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 43px;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(0px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -2px 8px rgba(0, 0, 0, 0.1),
+            inset 0 0 20px rgba(94, 129, 255, 0.1);
+    transition:
+            left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+            transform 0.2s ease,
+            box-shadow 0.3s ease;
+    z-index: 30;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.glass_slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+.glass_slider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.05) 100%
+    );
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glass_slider:hover {
+    box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.35),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45),
+            inset 0 0 30px rgba(94, 129, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.glass_slider:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            inset 0 0 20px rgba(94, 129, 255, 0.2);
+    transition: all 0.1s ease;
+}
+
+.profile_buttons {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 155px;
+    /*left: 310px;*/
+    right: 7px;
+    height: 40px;
+    width: auto;
+    gap: 8px;
+    /*background-color: white;*/
+}
+
+.normal_button {
+    display: flex;
+    align-items: center;
+    background-color: rgba(21, 21, 21);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+}
+
+/*.tooltip {*/
+/*  visibility: hidden;*/
+/*  width: max-content;*/
+/*  background-color: rgba(0, 0, 0, 0.8);*/
+/*  color: #fff;*/
+/*  text-align: center;*/
+/*  padding: 5px 8px;*/
+/*  border-radius: 4px;*/
+/*  position: absolute;*/
+/*  top: -30px;*/
+/*  left: 50%;*/
+/*  transform: translateX(-50%);*/
+/*}*/
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+
+    position: absolute;
+    bottom: 125%;
+    right: 0;
+    transform: translateY(10px);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.normal_button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.normal_button:hover {
+    box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.35),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45),
+            inset 0 0 30px rgba(94, 129, 255, 0.15);
+    transform: translateY(-1px);
+    z-index: 100;
+}
+
+.normal_button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            inset 0 0 20px rgba(94, 129, 255, 0.2);
+    transition: all 0.1s ease;
+}
+
+.pencil {
+    margin-top: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    align-content: center;
+}
+
+.pencil:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.plus {
+    width: 164px;
+}
+
+.message {
+    width: 182px;
+    margin-right: 4px;
+}
+
+.icon_pencil {
+    height: 17px;
+}
+
+.icon_share {
+    height: 16px;
+    width: 16px;
+}
+
+.icon_plus {
+    height: 23px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.icon_new_message {
+    height: 23px;
+    margin-left: 7px;
+    margin-right: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+.search {
+    right: 113px
+}
+
+.notifications {
+    right: 75px;
+}
