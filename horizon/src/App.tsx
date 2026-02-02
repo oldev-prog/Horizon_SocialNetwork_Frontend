@@ -6,7 +6,7 @@ import './App.css';
 import './styles/Buttons.css'
 import './styles/Icons.css'
 import'./styles/SideBar.css'
-import { PostsLayout } from './ProfileElements/components/PostContent /PostsLayout.tsx';
+import { ProfileContent } from "./ProfileElements/components/ProfileContent.tsx";
 import ProfileLayout from './ProfileElements/ProfileLayout.tsx';
 import { MediaContent} from './ProfileElements/components/MediaContent.tsx';
 import { MusicContent } from './ProfileElements/components/MusicContent.tsx';
@@ -14,7 +14,7 @@ import { ActionsContent } from './ProfileElements/components/ActionsContent.tsx'
 import { MoreContent } from './ProfileElements/components/MoreContent.tsx';
 import LoginPageLayout from './LoginPageElements/LoginPageLayout.tsx';
 import SignupPageLayout from "./signup_page/SignupPageLayout.tsx";
-import { PostPage } from "./ProfileElements/components/PostContent /PostPage.tsx";
+import { PostPage } from "./PostElements /PostPage/PostPage.tsx";
 import { useLocation } from "react-router-dom";
 
 export default function App() {
@@ -31,8 +31,8 @@ export default function App() {
               <Route path="/signup" element={<SignupPageLayout />} />
 
               <Route path="/" element={<ProfileLayout />}>
-                  <Route index element={<PostsLayout />} />
-                  <Route path="posts" element={<PostsLayout />} />
+                  <Route index element={<ProfileContent />} />
+                  <Route path="timeline" element={<ProfileContent />} />
                   <Route path="media" element={<MediaContent />} />
                   <Route path="music" element={<MusicContent />} />
                   <Route path="actions" element={<ActionsContent />} />

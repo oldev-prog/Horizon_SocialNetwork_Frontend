@@ -76,14 +76,15 @@
 }
 
 .post_text {
-    /*background-color: #de0f18;*/
     color: white;
-    margin-top: 0;
     padding-top: 10px;
     padding-left: 30px;
     padding-right: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     word-wrap: break-word;
+    line-height: 23px;
+    white-space: pre-wrap;
+    margin: 0 0 12px 0;
 }
 
 .post_media {
@@ -97,6 +98,11 @@
 
 .post_media:hover {
     cursor: pointer;
+}
+
+.post_media.post_page {
+    margin-left: 90px;
+    margin-bottom: 60px;
 }
 
 .post_interactions {
@@ -126,6 +132,7 @@
 .post_button.like {
     width: 35px;
     height: 35px;
+    margin-top: 0;
 }
 
 .icon_post_button {
@@ -153,6 +160,9 @@
 .like_container {
     display: flex;
     flex-direction: row;
+    /*background-color: #6245ca;*/
+    width: 30px;
+    height: 30px;
 }
 
 .likes_counter {
@@ -161,7 +171,7 @@
     transition: opacity 0.2s ease;
     color: white;
     left: 120px;
-    padding-top: 14px;
+    padding-top: 9px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
@@ -196,16 +206,22 @@
     z-index: 9999;
 }
 
+.post_and_comments{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
 .media_container {
     display: flex;
     flex-direction: row;
-    background: rgba(0,0,0,0.65);
+    /*background: rgba(0,0,0,1);*/
     border-radius: 12px;
-    padding: 20px;
-    width: 1100px;
+    /*padding: 20px;*/
+    width: 1080px;
     max-width: 90%;
     height: 90vh;
-    gap: 20px;
+    /*gap: 20px;*/
     overflow: hidden;
     position: relative;
     border: #3c3c3c 1px solid;
@@ -236,7 +252,7 @@
     width: 30px;
     top: 15px;
     right: 15px;
-    transition: opacity 0.2s ease
+    transition: opacity 0.2s ease;
 }
 
 .post_media_cross:hover {
@@ -250,27 +266,96 @@
     width: 700px;
     overflow-y: auto;
     height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    padding-bottom: 40px;
 }
 
 .comments_container {
     display: flex;
     flex-direction: column;
-    /*background-color: #ed0303;*/
+    background-color: rgb(0, 0, 0, 1);
     height: 1000px;
     overflow-y: auto;
     padding-top: 73px;
     overflow-x: hidden;
 }
 
+.input_comment_container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    /*min-height: 60px;*/
+    width: 100%;
+    border-top: #3c3c3c 1px solid;
+}
+
+.input_comment_field {
+    width: 75%;
+    max-height: 200px;
+    height: 60px;
+    resize: none;
+    overflow-y: auto;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+    border: none;
+    line-height: 1.5;
+    display: block;
+    padding-left: 12px;
+    outline: none;
+}
+
+.input_comment_field::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.add_object {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+.add_object:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.comment_attach_icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 0;
+}
+
+.post_reply {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.post_reply:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 .comment_container {
     display: flex;
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     height: 80px;
-    width: 100%;
+    width: 99%;
     border-right: #3c3c3c 1px solid;
     border-bottom: #3c3c3c 1px solid;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .author_container_comment {
@@ -278,7 +363,7 @@
     flex-direction: row;
     align-items: flex-start;
     width: 97%;
-    /*background-color: rgba(0, 0, 0, 0.6);*/
+    /*background-color: rgba(246, 3, 3, 0.6);*/
     padding: 10px;
     height: 60%;
 }
@@ -290,6 +375,8 @@
     flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
+    margin-top: 10px;
+    margin-left: 10px;
 
 }
 
@@ -298,7 +385,7 @@
     font-size: 16px;
     font-weight: bold;
     margin-left: 10px;
-    margin-top: 2px;
+    margin-top: 12px;
     font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -306,15 +393,15 @@
 .comment_text {
     /*position: absolute;*/
     color: white;
-    margin-top: 2px;
+    margin-top: 12px;
     margin-left: 10px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .publication_time.comment {
-    margin-top: 2px;
-    padding-right: 15px;
+    margin-top: 12px;
+    padding-right: 6px;
 }
 
 .comment_like {
@@ -331,30 +418,35 @@
 
 .info_and_buttons {
     width: 100%;
-    height: 75%;
+    height: 100%;
 }
 
 .comment_button.like {}
 
 .likes_counter.comment {
     left: 820px;
-    padding-top: 7px;
+    padding-top: 3px;
 }
 
 .post_button.like.comment {
-    /*padding-top: 0;*/
-    /*margin-top: 0;*/
-    /*margin: 0;*/
-    padding-left: 10px;
-    height: 35px;
-    width: 35px;
-    margin-right: 30px;
-    margin-top: 0;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-left: 8px;
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
 
 .like_icon.comment {
-    width: 35px;
-    height: 35px;
+    width: 22px;
+    height: 22px;
+    display: block;
 }
 
 .comment_buttons {
@@ -368,22 +460,39 @@
 .comment_button.reply {
     background: none;
     border: none;
-    padding: 0;
+    padding-left: 40px;
+    padding-top: 0;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     outline: none;
-    color: rgba(255, 255, 255, 0.6); /* Делаем чуть тусклее основного текста */
+    color: rgba(255, 255, 255, 0.6);
     font-size: 13px;
     font-weight: bold;
     transition: color 0.2s ease;
     margin-top: 0;
     display: inline-block;
+    height: 27px;
 }
 
 .comment_button.reply:hover {
-    text-decoration: underline; /* Классический прием для текстовых кнопок */
+    text-decoration: underline;
 }
 
 .comment_button.reply:hover {
     cursor: pointer;
+}
+
+.author_container.post.comment {
+    border-top-right-radius: 12px;
+}
+
+.post_interactions.post_page {
+    background-color: rgb(0, 0, 0, 1);
+    position: fixed;
+    width: 690px;
+    top: 736px
+}
+
+.likes_counter.post_page {
+    left: 135px;
 }
