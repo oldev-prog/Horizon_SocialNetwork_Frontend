@@ -8,7 +8,7 @@ import './styles/Icons.css'
 import'./styles/SideBar.css'
 import { ProfileContent } from "./ProfileElements/components/ProfileContent.tsx";
 import ProfileLayout from './ProfileElements/ProfileLayout.tsx';
-import { MediaContent} from './ProfileElements/components/MediaContent.tsx';
+import { MediaContent} from './ProfileElements/components/MediaContent /MediaContent.tsx';
 import { MusicContent } from './ProfileElements/components/MusicContent.tsx';
 import { ActionsContent } from './ProfileElements/components/ActionsContent.tsx';
 import { MoreContent } from './ProfileElements/components/MoreContent.tsx';
@@ -16,6 +16,7 @@ import LoginPageLayout from './LoginPageElements/LoginPageLayout.tsx';
 import SignupPageLayout from "./signup_page/SignupPageLayout.tsx";
 import { PostPage } from "./PostElements /PostPage/PostPage.tsx";
 import { useLocation } from "react-router-dom";
+import { MediaContentPage } from "./ProfileElements/components/MediaContent /MediaContentPage.tsx";
 
 export default function App() {
     const location = useLocation();
@@ -34,17 +35,21 @@ export default function App() {
                   <Route index element={<ProfileContent />} />
                   <Route path="timeline" element={<ProfileContent />} />
                   <Route path="media" element={<MediaContent />} />
+                  <Route path="p/:id" element={<MediaContentPage media_path="/public/media/tokyo_tower.jpeg"/>} />
                   <Route path="music" element={<MusicContent />} />
                   <Route path="actions" element={<ActionsContent />} />
                   <Route path="more" element={<MoreContent />} />
               </Route>
+
           </Routes>
 
           {background && (
               <Routes>
                   <Route path="/post_media_info" element={<PostPage />} />
+                  <Route path="p/:id" element={<MediaContentPage media_path="/public/media/tokyo_tower.jpeg"/>} />
               </Routes>
           )}
+
       </>
 
   );

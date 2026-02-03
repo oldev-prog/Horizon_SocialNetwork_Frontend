@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CommentModal } from "./CommentModal.tsx";
 
 
 export function PostInteractions() {
@@ -23,6 +24,8 @@ export function PostInteractions() {
     const handleAddClick = () => {
         setIsAdded(prev => !prev);
     }
+
+    const [isCommentModalOpen, setIsCommentModalOpen] = useState(false);
 
     return (
         <div className="post_interactions">
@@ -55,7 +58,7 @@ export function PostInteractions() {
                             </span>
                 )}
             </div>
-            <button className="post_button comment">
+            <button className="post_button comment" onClick={() => setIsCommentModalOpen(true)}>
                 <img className="icon_post_button" src="../../../public/icons/icon_comment.png"/>
             </button>
             <button className="post_button share">
@@ -68,6 +71,11 @@ export function PostInteractions() {
                         "../../../public/icons/icon_bookmark.png"
                 }/>
             </button>
+
+            <CommentModal
+                isOpen={isCommentModalOpen}
+                onClose={() => setIsCommentModalOpen(false)}
+            />
         </div>
     )
 }

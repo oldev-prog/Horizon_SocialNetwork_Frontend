@@ -4,7 +4,7 @@ import { PostsLayout } from "../../PostElements /PostContent /PostsLayout.tsx";
 export function ProfileContent() {
     return (
         <div className="profile_content">
-            <PostsLayout post_content="1. The Atmospheric Pressure Paradox
+            <PostsLayout post_content="Occupy Mars!                                                                                                                                                 1. The Atmospheric Pressure Paradox
                 The most common idea for terraforming is melting the polar ice caps to release CO
                 2
                 ​

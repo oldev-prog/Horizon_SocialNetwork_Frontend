@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { PostContent } from "./PostContent.tsx";
-import { MediaContentInfo } from "./MediaContentInfo.tsx";
+import { PostMediaContentInfo } from "./PostMediaContentInfo.tsx";
 
 export function PostPage() {
     // const location = useLocation();
@@ -44,7 +44,7 @@ export function PostPage() {
 
                 The Benefit: This is close enough to Earth’s circadian rhythm that humans and plants wouldn't suffer the biological 'jet lag' that would occur on the Moon (where a 'day' lasts 28 Earth days)."
                                                                  media_path="../public/Mars.png" />
-                    <MediaContentInfo />
+                    <PostMediaContentInfo />
             </div>
             <img className="post_media_cross" src="../../../public/icons/icon_cross.png"/>
         </div>
