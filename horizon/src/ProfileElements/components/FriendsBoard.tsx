@@ -16,7 +16,7 @@ export function FriendBoard() {
     <div className="friends_board">
       <div className="friends_container">
         <a href="" className="h1_friends">
-          Friends
+          Soulmates
         </a>
         <p className="friends_value">100</p>
       </div>

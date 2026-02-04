@@ -35,7 +35,7 @@ export default function App() {
                   <Route index element={<ProfileContent />} />
                   <Route path="timeline" element={<ProfileContent />} />
                   <Route path="media" element={<MediaContent />} />
-                  <Route path="p/:id" element={<MediaContentPage media_path="/public/media/tokyo_tower.jpeg"/>} />
+                  <Route path="p/:id" element={<MediaContentPage />} />
                   <Route path="music" element={<MusicContent />} />
                   <Route path="actions" element={<ActionsContent />} />
                   <Route path="more" element={<MoreContent />} />
@@ -46,7 +46,7 @@ export default function App() {
           {background && (
               <Routes>
                   <Route path="/post_media_info" element={<PostPage />} />
-                  <Route path="p/:id" element={<MediaContentPage media_path="/public/media/tokyo_tower.jpeg"/>} />
+                  <Route path="p/:id" element={<MediaContentPage />} />
               </Routes>
           )}
 

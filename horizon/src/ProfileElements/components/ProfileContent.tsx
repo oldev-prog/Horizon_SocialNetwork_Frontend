@@ -1,10 +1,12 @@
 import { PostsLayout } from "../../PostElements /PostContent /PostsLayout.tsx";
+import { ProfileSubscriptions } from "./ProfileSubscriptions.tsx";
 
 
 export function ProfileContent() {
     return (
         <div className="profile_content">
-            <PostsLayout post_content="Occupy Mars!                                                                                                                                                 1. The Atmospheric Pressure Paradox
+            <div className="posts">
+                <PostsLayout post_content="Occupy Mars!                                                                                                                                                 1. The Atmospheric Pressure Paradox
                 The most common idea for terraforming is melting the polar ice caps to release CO
                 2
                 ​
@@ -33,9 +35,13 @@ export function ProfileContent() {
                 One of the few genuine advantages is the Sol (Martian day). Mars rotates once every 24 hours and 37 minutes.
 
                 The Benefit: This is close enough to Earth’s circadian rhythm that humans and plants wouldn't suffer the biological 'jet lag' that would occur on the Moon (where a 'day' lasts 28 Earth days)."
-            media_path="../public/Mars.png"/>
-            <PostsLayout post_content="Happy New Year!" />
-            <PostsLayout post_content="God bless America!" />
+                             media_path="../public/Mars.png"/>
+                <PostsLayout post_content="Happy New Year!" />
+                <PostsLayout post_content="God bless America!" />
+            </div>
+            <div className="subscriptions">
+                <ProfileSubscriptions />
+            </div>
         </div>
     );
 }

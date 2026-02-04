@@ -59,14 +59,249 @@
     border-top: #3c3c3c 1px solid;
 }
 
-.profile_content {
-    flex: 1;
+.posts{
+    width: 780px;
+}
+
+.subscriptions {
+    flex: 1
+}
+
+.profile_subscriptions_wrapper {
+    position: sticky;
+    top: 0;
+    width: 350px;
+    /*margin-left: 20px;*/
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    border-left: 1px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.profile_subscriptions_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.profile_subscriptions_header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.see_all_button {
+    background: none;
+    border: none;
+    color: #6245ca;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.see_all_button:hover {
+    text-decoration: underline;
+}
+
+.followers_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.follower_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #3c3c3c;
+    /*padding-bottom: 20px;*/
+}
+
+.follower_item:last-child {
+    border-bottom: none;
+}
+
+.follower_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.follower_info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.follower_name {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.follower_username {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.follow_button {
+    background-color: #6245ca;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.follow_button:hover {
+    background-color: #7d5ce7;
+}
+
+
+/*.profile_subscriptions_wrapper {*/
+/*    position: sticky;*/
+/*    top: 20px;*/
+/*    background: rgba(0,0,0,0.4);*/
+/*    backdrop-filter: blur(8px);*/
+/*    border: 1px solid #3c3c3c;*/
+/*    border-radius: 15px;*/
+/*    padding: 15px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 15px;*/
+/*    max-width: 320px;*/
+/*}*/
+
+/*.subs_header h3 {*/
+/*    color: white;*/
+/*    font-family: Arial, sans-serif;*/
+/*    font-size: 18px;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.subs_header p {*/
+/*    color: rgba(255,255,255,0.6);*/
+/*    font-size: 14px;*/
+/*    margin: 2px 0 0 0;*/
+/*}*/
+
+/*.subs_section h4 {*/
+/*    color: #6245ca;*/
+/*    font-family: Arial, sans-serif;*/
+/*    font-size: 14px;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.subs_list {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.subs_user {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    width: 60px;*/
+/*    cursor: pointer;*/
+/*    transition: transform 0.2s ease;*/
+/*}*/
+
+/*.subs_user:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*.subs_user img {*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    border-radius: 50%;*/
+/*    object-fit: cover;*/
+/*    border: 1px solid #6245ca;*/
+/*}*/
+
+/*.subs_user span {*/
+/*    color: white;*/
+/*    font-size: 12px;*/
+/*    text-align: center;*/
+/*    margin-top: 3px;*/
+/*}*/
+
+/*.subs_footer a {*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*    color: #6245ca;*/
+/*    text-decoration: none;*/
+/*    align-self: flex-start;*/
+/*}*/
+
+/*.subs_footer a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+
+/*.subs_user {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.subs_user img {*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    border-radius: 50%;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.subs_user_text {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.subs_user_name {*/
+/*    color: #fff;*/
+/*    font-weight: bold;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.subs_user_nickname {*/
+/*    color: rgba(255, 255, 255, 0.6);*/
+/*    font-size: 12px;*/
+/*}*/
+
+
+
+.profile_content {
+    display: flex;
+    flex-direction: row;
     height: auto;
     width: 100%;
     background-color: rgba(0, 0, 0);
     /*will-change: transform;*/
+}
+
+.profile_content_{
+    background-color: #6245ca;
 }
 
 .profile_image {
@@ -285,7 +520,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.profile_content {
-    display: flex;
-    flex-direction: column;
-}
+/*.profile_content {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/

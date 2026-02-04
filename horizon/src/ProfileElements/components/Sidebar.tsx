@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const menuIcons = [
   { src: '/icons/icon_menu2.svg', type: 'svg', label: 'Menu', isMenu: true }, // Пометка для бургера
@@ -12,32 +12,41 @@ const menuIcons = [
 ];
 
 // export function Sidebar() {
+//   const [isOpen, setIsOpen] = useState(false);
+//
 //   return (
-//     <div className="side_bar">
+//     <div className={`side_bar ${isOpen ? 'open' : ''}`}>
 //       {menuIcons.map((icon, index) => (
-//         <button key={index} className="side_bar_button">
+//         <button
+//           key={index}
+//           className="side_bar_button"
+//           onClick={icon.isMenu ? () => setIsOpen(!isOpen) : undefined}
+//         >
 //           <img className={`icon_${icon.type}`} src={icon.src} alt="nav icon" />
+//           <p className="side_bar_label">{icon.label}</p>
 //         </button>
 //       ))}
 //     </div>
 //   );
 // }
 
+import { useState } from "react";
+
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`side_bar ${isOpen ? 'open' : ''}`}>
-      {menuIcons.map((icon, index) => (
-        <button
-          key={index}
-          className="side_bar_button"
-          onClick={icon.isMenu ? () => setIsOpen(!isOpen) : undefined}
-        >
-          <img className={`icon_${icon.type}`} src={icon.src} alt="nav icon" />
-          <p className="side_bar_label">{icon.label}</p>
-        </button>
-      ))}
-    </div>
+      <div
+          className={`side_bar ${isOpen ? "open" : ""}`}
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+      >
+        {menuIcons.map((icon, index) => (
+            <button key={index} className="side_bar_button">
+              <img className={`icon_${icon.type}`} src={icon.src} alt="nav icon" />
+              <p className="side_bar_label">{icon.label}</p>
+            </button>
+        ))}
+      </div>
   );
 }
