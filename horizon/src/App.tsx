@@ -9,7 +9,7 @@ import'./styles/SideBar.css'
 import { ProfileContent } from "./ProfileElements/components/ProfileContent.tsx";
 import ProfileLayout from './ProfileElements/ProfileLayout.tsx';
 import { MediaContent} from './ProfileElements/components/MediaContent /MediaContent.tsx';
-import { MusicContent } from './ProfileElements/components/MusicContent.tsx';
+import { MusicContent } from './ProfileElements/components/MusicElement /MusicContent.tsx';
 import { ActionsContent } from './ProfileElements/components/ActionsContent.tsx';
 import { MoreContent } from './ProfileElements/components/MoreContent.tsx';
 import LoginPageLayout from './LoginPageElements/LoginPageLayout.tsx';

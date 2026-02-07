@@ -40,13 +40,16 @@ export function ProfileSubscriptions() {
             <div className="followers_list">
                 {followersData.map((follower) => (
                     <div key={follower.id} className="follower_item">
-                        <img className="follower_avatar" src={follower.avatar} />
-                        <div className="follower_info">
-                            <span className="follower_name">{follower.name}</span>
-                            <span className="follower_username">{follower.username}</span>
+                        <div style={{display: 'flex', alignItems: 'center', flex: 1}}>
+                            <img className="follower_avatar" src={follower.avatar} />
+                            <div className="follower_info">
+                                <span className="follower_name">{follower.name}</span>
+                                <span className="follower_username">{follower.username}</span>
+                            </div>
                         </div>
                         <button className="follow_button">Follow</button>
                     </div>
+
                 ))}
             </div>
             <div className="profile_subscriptions_header">

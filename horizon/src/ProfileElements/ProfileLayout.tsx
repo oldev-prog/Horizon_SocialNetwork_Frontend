@@ -3,6 +3,7 @@ import { ProfileHeader } from './components/ProfileHeader.tsx';
 import { ProfileInfo } from './components/ProfileInfo.tsx';
 import { ProfileNav } from './components/ProfileNav.tsx';
 import { Outlet} from 'react-router-dom';
+import { ProfileBio } from './components/ProfileBio.tsx';
 import './components/styles/ProfileLayout.css'
 // import '../styles/Buttons.css'
 
@@ -17,15 +18,7 @@ export default function ProfileLayout() {
               <ProfileHeader />
               <div className="profile_image"></div>
               <ProfileInfo />
-              <div className="profile_bio">
-                <img
-                  className="icon_info"
-                  src="../../public/icons/icon_info.png"
-                />
-                <a className="bio" href="">
-                  About me
-                </a>
-              </div>
+              <ProfileBio />
               <ProfileNav />
             </div>
             <div>

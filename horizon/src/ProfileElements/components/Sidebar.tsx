@@ -1,14 +1,15 @@
 // import { useState } from 'react';
 
 const menuIcons = [
-  { src: '/icons/icon_menu2.svg', type: 'svg', label: 'Menu', isMenu: true }, // Пометка для бургера
-  { src: '/icons/icon_home3.svg', type: 'svg', label: 'Home' },
-  { src: '/icons/icon_profile2.png', type: 'png', label: 'Profile' },
-  { src: '/icons/icon_feed.png', type: 'png', label: 'Feed' },
-  { src: '/icons/icon_friends.png', type: 'png', label: 'Friends' },
-  { src: '/icons/icon_communication.png', type: 'png', label: 'Messages' },
-  { src: '/icons/icon_music.png', type: 'png', label: 'Music' },
-  { src: '/icons/icon_settings.svg', type: 'svg', label: 'Settings' },
+  // { src: '/icons/icon_menu2.svg', type: 'svg', label: 'Menu', isMenu: true }, // Пометка для бургера
+  { src: '/icons/icon_home4.png', type: 'svg', label: 'Home' },
+  { src: '/icons/icon_profile3.png', type: 'png', label: 'Profile' },
+  // { src: '/icons/icon_feed.png', type: 'png', label: 'Feed' },
+  { src: '/icons/icon_soulmates3.png', type: 'png', label: 'Soulmates' },
+  { src: '/icons/icon_communication2.png', type: 'png', label: 'Chat' },
+  { src: '/icons/icon_music4.png', type: 'png', label: 'Music' },
+  { src: '/icons/icon_ai.png', type: 'png', label: 'AI' },
+  { src: '/icons/icon_settings3.png', type: 'svg', label: 'Settings' },
 ];
 
 // export function Sidebar() {
