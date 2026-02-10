@@ -24,8 +24,14 @@ export default function ProfileLayout() {
             <div>
               <Outlet />
             </div>
+            <div className="footer">
+              <div className="footer_content">
+                <span className="footer_title">Horizon</span>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -28,30 +28,123 @@
 .playlists_list{
     height: auto;
     min-height: 200px;
+    max-height: 220px;
+    overflow: auto;
     width: 100%;
-    background-color: #6245ca;
+    /*background-color: #6245ca;*/
     position: sticky;
-    padding-left: 8px;
-    gap: 10px;
+    /*padding-left: 8px;*/
+    color: white;
+    border: #3c3c3c 1px solid;
+    border-radius: 10px;
 }
 
+
 .playlist_item {
-    height: 40px;
-    background-color: white;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    /*background-color: white;*/
+    /*border: #3c3c3c 1px solid;*/
+    padding-left: 10px;
+}
+
+.playlist_item:hover{
+    cursor: pointer;
+    background-color: rgba(50, 50, 50, 0.9);
 }
 
 .playlist_info{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-items: center;
+    /*justify-items: center;*/
     gap: 10px;
+    width: 100%;
+    padding-right: 5px;
+    /*background-color: #6245ca;*/
+    /*margin-left: auto;*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .podcasts_header {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.podcasts_list{
+    height: auto;
+    min-height: 200px;
+    max-height: 220px;
+    overflow: auto;
+    width: 100%;
+    /*background-color: #6245ca;*/
+    position: sticky;
+    /*padding-left: 8px;*/
+    gap: 10px;
+    border: #3c3c3c 1px solid;
+    border-radius: 10px;
+}
+
+.podcast_item {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    /*background-color: white;*/
+    /*margin-bottom: 10px;*/
+    /*border: #3c3c3c 1px solid;*/
+    padding-left: 10px;
+}
+
+.podcast_item:hover{
+    cursor: pointer;
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+.podcast_info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: white;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.artist_info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /*justify-items: center;*/
+    justify-content: space-between;
+    gap: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.music_more{
+    height: 20px;
+    width: 20px;
+    background: none;
+    border: none;
+    justify-items: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.more_icon.playlist {
+    margin-right: 0;
+}
+
+.music_more:hover{
+    cursor: pointer;
+}
+
+.more_icon{
+    height: 13px;
+    width: 13px;
 }
 
 .music_container {
@@ -82,7 +175,7 @@
 .track_item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     padding: 10px 15px;
     border-radius: 10px;
     background-color: rgba(50, 50, 50, 0.6);
@@ -102,6 +195,7 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    margin-left: 15px;
 }
 
 .track_title {
@@ -117,22 +211,93 @@
 .track_duration {
     font-size: 12px;
     margin-right: 10px;
+    right: 10px;
+    margin-left: auto;
 }
 
 .track_play {
     font-size: 16px;
 }
 
-.player_bar {
-    margin-top: auto;
-    padding: 10px 15px;
-    border-radius: 12px;
-    background-color: rgba(30, 30, 30, 0.8);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(6px);
+.search_button{
+    height: 30px;
+    width: 30px;
+    margin-top: 12px;
+    margin-left: 2px;
+    padding-right: 10px;
+    background: none;
+    border: none;
 }
+
+.search_button:hover{
+    cursor: pointer;
+}
+
+.search_icon{
+    height: 22px;
+    width: 22px;
+}
+
+.h2_search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+}
+
+.search_wrapper {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 16px;
+}
+
+.search_button {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.search_icon {
+    height: 22px;
+    width: 22px;
+}
+
+.search_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    outline: none;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.search_input.open {
+    width: 180px;
+    opacity: 1;
+    padding: 6px 8px;
+}
+
+.search_button.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 
 .player_info {
     display: flex;
@@ -155,4 +320,96 @@
     color: #6245ca;
     font-size: 18px;
     cursor: pointer;
+}
+
+.music_icon {
+    width: 20px;
+    height: 20px;
+
+    transition:
+            transform 0.25s ease,
+            opacity 0.2s ease;
+}
+
+.music_icon.playing {
+    transform: scale(1.15) rotate(180deg);
+}
+
+.listitem_img{
+    height: 45px;
+    width: 45px;
+    border-radius: 8px;
+    border: none;
+    object-fit: cover;
+}
+
+.listitem_img.liked_songs{
+    /*!*background-color: #6245ca;*!*/
+    /*height: 30px;*/
+    /*width: 30px;*/
+    border-radius: 50px;
+}
+
+/*.listitem_img.regular{*/
+/*    object-fit: cover;*/
+/*}*/
+
+.songs_number {
+    margin-left: auto;
+    font-size: 15px;
+    color: #acabab;
+}
+
+
+
+
+
+
+
+
+/* базовый контейнер */
+.music_item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+/* только треки */
+.track_item {
+    cursor: pointer;
+}
+
+/* правая часть */
+.track_right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* кнопка more — скрыта по умолчанию */
+.track_more {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-4px);
+    transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+}
+
+/* показываем ТОЛЬКО при hover трека */
+.track_item:hover .track_more {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* защита от клика по img */
+.more_icon {
+    pointer-events: none;
 }
