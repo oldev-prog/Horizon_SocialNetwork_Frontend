@@ -350,43 +350,28 @@
     border-radius: 50px;
 }
 
-/*.listitem_img.regular{*/
-/*    object-fit: cover;*/
-/*}*/
-
 .songs_number {
     margin-left: auto;
     font-size: 15px;
     color: #acabab;
 }
 
-
-
-
-
-
-
-
-/* базовый контейнер */
 .music_item {
     display: flex;
     align-items: center;
     padding: 10px 14px;
 }
 
-/* только треки */
 .track_item {
     cursor: pointer;
 }
 
-/* правая часть */
 .track_right {
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-/* кнопка more — скрыта по умолчанию */
 .track_more {
     margin-left: 10px;
     background: none;
@@ -402,14 +387,20 @@
             transform 0.2s ease;
 }
 
-/* показываем ТОЛЬКО при hover трека */
 .track_item:hover .track_more {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-/* защита от клика по img */
 .more_icon {
     pointer-events: none;
+}
+
+.track_img{
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    border-radius: 5px;
+    object-fit: cover;
 }

@@ -9,6 +9,7 @@ interface Track {
     title: string;
     artist: string;
     duration: string;
+    img_src: string;
 }
 
 interface Playlist {
@@ -34,44 +35,28 @@ interface Artist {
 
 
 const tracksData: Track[] = [
-    { id: 1, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 2, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 3, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 4, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 5, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 6, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 7, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 8, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 9, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 10, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 11, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 12, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 13, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 14, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 15, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 16, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 17, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 18, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 19, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 1, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 2, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 3, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 4, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 5, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 6, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 7, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 8, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 9, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 10, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 11, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 12, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 13, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 14, title: "Midnight Run", artist: "Volt", duration: "3:30" },
-    { id: 15, title: "Aurora", artist: "Skyline", duration: "4:12" },
-    { id: 16, title: "Eclipse", artist: "Luma", duration: "3:42" },
-    { id: 17, title: "Starlight", artist: "Nova", duration: "4:05" },
-    { id: 18, title: "Neon Dreams", artist: "Echo", duration: "2:58" },
-    { id: 19, title: "Midnight Run", artist: "Volt", duration: "3:30" },
+    { id: 1, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg"},
+    { id: 2, title: "Starlight", artist: "Nova", duration: "4:05", img_src:"/icons/metalcore.jpg" },
+    { id: 3, title: "Neon Dreams", artist: "Echo", duration: "2:58", img_src:"/icons/metalcore.jpg" },
+    { id: 4, title: "Midnight Run", artist: "Volt", duration: "3:30", img_src:"/icons/metalcore.jpg" },
+    { id: 5, title: "Aurora", artist: "Skyline", duration: "4:12", img_src:"/icons/metalcore.jpg" },
+    { id: 6, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg" },
+    { id: 7, title: "Starlight", artist: "Nova", duration: "4:05", img_src:"/icons/metalcore.jpg" },
+    { id: 8, title: "Neon Dreams", artist: "Echo", duration: "2:58", img_src:"/icons/metalcore.jpg" },
+    { id: 9, title: "Midnight Run", artist: "Volt", duration: "3:30", img_src:"/icons/metalcore.jpg" },
+    { id: 10, title: "Aurora", artist: "Skyline", duration: "4:12", img_src:"/icons/metalcore.jpg" },
+    { id: 11, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg" },
+    { id: 12, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg"},
+    { id: 13, title: "Starlight", artist: "Nova", duration: "4:05", img_src:"/icons/metalcore.jpg" },
+    { id: 14, title: "Neon Dreams", artist: "Echo", duration: "2:58", img_src:"/icons/metalcore.jpg" },
+    { id: 15, title: "Midnight Run", artist: "Volt", duration: "3:30", img_src:"/icons/metalcore.jpg" },
+    { id: 16, title: "Aurora", artist: "Skyline", duration: "4:12", img_src:"/icons/metalcore.jpg" },
+    { id: 17, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg" },
+    { id: 18, title: "Starlight", artist: "Nova", duration: "4:05", img_src:"/icons/metalcore.jpg" },
+    { id: 19, title: "Neon Dreams", artist: "Echo", duration: "2:58", img_src:"/icons/metalcore.jpg" },
+    { id: 20, title: "Midnight Run", artist: "Volt", duration: "3:30", img_src:"/icons/metalcore.jpg" },
+    { id: 21, title: "Aurora", artist: "Skyline", duration: "4:12", img_src:"/icons/metalcore.jpg" },
+    { id: 22, title: "Eclipse", artist: "Luma", duration: "3:42", img_src:"/icons/metalcore.jpg" },
 ];
 
 const playlistsData: Playlist[] = [
@@ -130,6 +115,7 @@ export function MusicContent() {
                                     }
                                 />
                             </div>
+                            <img className="track_img" src={track.img_src}/>
                             <div className="track_info">
                                 <span className="track_title">{track.title}</span>
                                 <span className="track_artist">{track.artist}</span>
@@ -146,21 +132,6 @@ export function MusicContent() {
                         </div>
                     ))}
                 </div>
-
-                {currentTrack && (
-                    <div className="player_bar">
-                        <div className="player_info">
-                            <span className="player_title">{currentTrack.title}</span>
-                            <span className="player_artist">{currentTrack.artist}</span>
-                        </div>
-                        <button
-                            className="player_play"
-                            onClick={() => setIsPlaying(!isPlaying)}
-                        >
-                            {isPlaying ? "⏸️" : <img src="/icons/icon_play.png" />}
-                        </button>
-                    </div>
-                )}
             </div>
             <div className="playlists_container">
                 <h2 className="playlists_header">Playlists</h2>
