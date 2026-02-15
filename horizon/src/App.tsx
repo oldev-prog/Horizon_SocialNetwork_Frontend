@@ -17,6 +17,7 @@ import SignupPageLayout from "./signup_page/SignupPageLayout.tsx";
 import { PostPage } from "./PostElements /PostPage/PostPage.tsx";
 import { useLocation } from "react-router-dom";
 import { MediaContentPage } from "./ProfileElements/components/MediaContent /MediaContentPage.tsx";
+import { EmailVerificationPage } from "./signup_page/EmailVarificstionPage.tsx";
 
 export default function App() {
     const location = useLocation();
@@ -24,12 +25,12 @@ export default function App() {
     const state = location.state;
     const background = state && state.background;
 
-
   return (
       <>
           <Routes location={background || location}>
               <Route path="/login" element={<LoginPageLayout />} />
               <Route path="/signup" element={<SignupPageLayout />} />
+              <Route path="/verification-success" element={<EmailVerificationPage />} />
 
               <Route path="/" element={<ProfileLayout />}>
                   <Route index element={<ProfileContent />} />

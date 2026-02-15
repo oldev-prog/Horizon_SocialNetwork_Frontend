@@ -3,10 +3,13 @@ import { ContinueWithButton } from "../LoginPageElements/components /ContinueWit
 import { DateOfBirth } from "./components /BirthDate.tsx";
 import { GenderChoosing } from "./components /Gender.tsx";
 import { LoginLink } from "./components /LoginLink.tsx";
+import { Alert } from "../LoginPageElements/Alert.tsx";
 import './SignupPageLayout.css'
 import { useState } from "react";
 
 export default function SignupPageLayout() {
+
+    const [error, setError] = useState<string | null>(null);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -33,9 +36,9 @@ export default function SignupPageLayout() {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Check your email for verification!");
+                setError("Check your email to pass verification.");
             } else {
-                alert(`Error: ${data.details || 'Signup failed'}`);
+                setError(data.details);
             }
         } catch (error) {
             console.error("Connection error:", error);
@@ -79,6 +82,9 @@ export default function SignupPageLayout() {
                         <ContinueWithButton label="Apple" img_path="../../public/login_elements/apple.png"/>
 
                     <LoginLink />
+
+                    <Alert message={error} onClose={() => setError(null)} />
+
                 </form>
             </div>
         </div>
