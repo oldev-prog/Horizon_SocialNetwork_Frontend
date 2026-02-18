@@ -35,12 +35,15 @@ export default function LoginPageLayout() {
                 })
             });
 
-            // const data = await response.json();
+            const data = await response.json();
 
             if (response.ok) {
                 navigate('/')
             } else {
-                setError("Invalid email or password.");
+                const errorMessage = Array.isArray(data.detail)
+                    ? data.detail[0].msg
+                    : (data.details || data.detail || "Signup failed");
+                setError(errorMessage);
             }
         } catch (err) {
             setError("Connection error");

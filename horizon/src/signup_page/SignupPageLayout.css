@@ -231,3 +231,30 @@ select.input_field {
         opacity: 1;
     }
 }
+
+.resend_container {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.resend_text {
+    color: #666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.resend_button {
+    background: none;
+    border: none;
+    color: #6245ca;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.resend_button:hover {
+    color: #6245ca;
+}

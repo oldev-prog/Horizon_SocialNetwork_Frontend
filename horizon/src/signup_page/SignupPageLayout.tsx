@@ -6,15 +6,28 @@ import { LoginLink } from "./components /LoginLink.tsx";
 import { Alert } from "../LoginPageElements/Alert.tsx";
 import './SignupPageLayout.css'
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function SignupPageLayout() {
 
     const [error, setError] = useState<string | null>(null);
+    const [timer, setTimer] = useState(0);
+    const [canResend, setCanResend] = useState(false);
 
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
+
+    useEffect(() => {
+        let interval: number;
+        if (timer > 0) {
+            interval = window.setInterval(() => {
+                setTimer((prev) => prev - 1);
+            }, 1000);
+        }
+        return () => clearInterval(interval);
+    }, [timer]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,26 +35,56 @@ export default function SignupPageLayout() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null);
+
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d_@$!%*?&]{8,}$/;
+
+        if (!passwordRegex.test(formData.password)) {
+            setError("Password is too weak. Use 8+ characters, including uppercase, numbers, and symbols.");
+            return;
+        }
 
         try {
             const response = await fetch('http://127.0.0.1:8000/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: formData.email,
-                    password: formData.password
-                })
+                body: JSON.stringify(formData)
             });
 
             const data = await response.json();
 
             if (response.ok) {
                 setError("Check your email to pass verification.");
+                setCanResend(true);
+                setTimer(60);
             } else {
-                setError(data.details);
+                const errorMessage = Array.isArray(data.detail)
+                    ? data.detail[0].msg
+                    : (data.details || data.detail || "Signup failed");
+                setError(errorMessage);
             }
         } catch (error) {
-            console.error("Connection error:", error);
+            setError("Connection error. Is the server running?");
+        }
+    };
+
+    const handleResendEmail = async () => {
+        if (timer > 0) return;
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/auth/resend-verification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: formData.email })
+            });
+
+            if (response.ok) {
+                setTimer(60);
+                setError("Verification email resent!");
+            }
+        } catch (err) {
+            setError("Failed to resend email.");
         }
     };
 
@@ -78,6 +121,23 @@ export default function SignupPageLayout() {
                             required/>
                     </div>
                     <SignUpButton />
+
+                    {canResend && (
+                        <div className="resend_container">
+                            {timer > 0 ? (
+                                <p className="resend_text">Send email again in <b>{timer}s</b></p>
+                            ) : (
+                                <button
+                                    type="button"
+                                    className="resend_button"
+                                    onClick={handleResendEmail}
+                                >
+                                    Send email again
+                                </button>
+                            )}
+                        </div>
+                    )}
+
                     <ContinueWithButton label="Google" img_path="../../public/login_elements/google.png"/>
                         <ContinueWithButton label="Apple" img_path="../../public/login_elements/apple.png"/>
 
