@@ -7,6 +7,7 @@ import { Alert } from "../LoginPageElements/Alert.tsx";
 import './SignupPageLayout.css'
 import { useState } from "react";
 import { useEffect } from "react";
+import api from "../api.tsx";
 
 export default function SignupPageLayout() {
 
@@ -46,26 +47,24 @@ export default function SignupPageLayout() {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/auth/signup', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
+            await api.post('/auth/signup', formData);
 
-            const data = await response.json();
+            setError("Check your email to pass verification.");
+            setCanResend(true);
+            setTimer(60);
 
-            if (response.ok) {
-                setError("Check your email to pass verification.");
-                setCanResend(true);
-                setTimer(60);
-            } else {
-                const errorMessage = Array.isArray(data.detail)
-                    ? data.detail[0].msg
-                    : (data.details || data.detail || "Signup failed");
-                setError(errorMessage);
+        } catch (err: any) {
+            const errorData = err.response?.data;
+
+            const errorMessage = Array.isArray(errorData?.detail)
+                ? errorData.detail[0].msg
+                : (errorData?.details || errorData?.detail || "Signup failed");
+
+            setError(errorMessage);
+
+            if (!err.response) {
+                setError("Connection error. Is the server running?");
             }
-        } catch (error) {
-            setError("Connection error. Is the server running?");
         }
     };
 

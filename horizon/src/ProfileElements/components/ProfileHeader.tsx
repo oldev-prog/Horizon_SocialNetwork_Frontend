@@ -1,11 +1,22 @@
 import { useNavigate} from "react-router-dom";
+import api from "../../api.tsx";
 
 export function ProfileHeader() {
     const navigate = useNavigate();
 
-    const handleLogout = () =>{
-        navigate('/login')
-    }
+    const handleLogout = async () => {
+        try {
+            await api.post('/auth/logout');
+        } catch (err) {
+            console.error("Logout request failed, cleaning up locally...", err);
+        } finally {
+            localStorage.removeItem('accessToken');
+
+            delete api.defaults.headers.common['Authorization'];
+
+            navigate('/login');
+        }
+    };
 
     return (
     <div className="profile_background">

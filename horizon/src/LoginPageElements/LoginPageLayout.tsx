@@ -5,6 +5,7 @@ import "./components /styles/LoginPageLayout.css"
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "./Alert.tsx";
+import api from "../api.tsx";
 
 export default function LoginPageLayout() {
 
@@ -23,30 +24,31 @@ export default function LoginPageLayout() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include',
-                body: JSON.stringify({
-                    email: formData.email.trim().toLowerCase(),
-                    password: formData.password
-                })
+            const response = await api.post('/auth/login', {
+                email: formData.email.trim().toLowerCase(),
+                password: formData.password
             });
 
-            const data = await response.json();
+            const data = response.data;
 
-            if (response.ok) {
-                navigate('/')
+            if (data.access_token) {
+                localStorage.setItem('accessToken', data.access_token);
+
+                api.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
+
+                navigate('/');
             } else {
-                const errorMessage = Array.isArray(data.detail)
-                    ? data.detail[0].msg
-                    : (data.details || data.detail || "Signup failed");
-                setError(errorMessage);
+                setError("Token not received from server");
             }
-        } catch (err) {
-            setError("Connection error");
+
+        } catch (err: any) {
+            const errorMessage = err.response?.data?.detail
+                ? (Array.isArray(err.response.data.detail) ? err.response.data.detail[0].msg : err.response.data.detail)
+                : "Login failed";
+            setError(errorMessage);
         }
     };
 
